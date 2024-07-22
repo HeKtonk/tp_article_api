@@ -11,5 +11,8 @@
   },
   "author": "Corey Hoyez",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
