@@ -9,7 +9,7 @@ app.get('/article/1', (request, response) => {
     response.json("Retournera l'article ayant l'id 1");
 })
 
-app.get('/article/save-article', (request, response) => {
+app.post('/article/save-article', (request, response) => {
     response.json("Va créer/mettre à jour un article envoyé");
 })
 
