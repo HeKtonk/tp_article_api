@@ -5,8 +5,8 @@ app.get('/articles', (request, response) => {
     response.json( "Retournera la liste des articles");
 })
 
-app.get('/article/1', (request, response) => {
-    response.json("Retournera l'article ayant l'id 1");
+app.get('/article/:id', (request, response) => {
+    response.json(`Retournera l\'article ayant l\'id ${request.params.id}`);
 })
 
 app.post('/article/save-article', (request, response) => {
