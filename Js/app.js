@@ -13,8 +13,8 @@ app.post('/article/save-article', (request, response) => {
     response.json("Va créer/mettre à jour un article envoyé");
 })
 
-app.delete('/article/1', (request, response) => {
-    response.json("Supprimera l'article ayant l'id 1");
+app.delete('/article/:id', (request, response) => {
+    response.json(`Supprimera l\'article ayant l'id ${request.params.id}`);
 })
 
 app.listen(3000, () => {
