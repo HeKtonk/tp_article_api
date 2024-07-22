@@ -13,6 +13,10 @@ app.post('/article/save-article', (request, response) => {
     response.json("Va créer/mettre à jour un article envoyé");
 })
 
+app.delete('/article/1', (request, response) => {
+    response.json("Supprimera l'article ayant l'id 1");
+})
+
 app.listen(3000, () => {
     console.log('Server started on port 3000');
 });
