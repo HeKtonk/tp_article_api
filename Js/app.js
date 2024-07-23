@@ -19,12 +19,17 @@ app.get('/article/:id', (request, response) => {
 app.use(express.json());
 app.post('/article/save-article', (request, response) => {
     response.json("Va créer/mettre à jour un article envoyé");
-    console.log(request.body);
     articles.push(request.body);
 })
 
 app.delete('/article/:id', (request, response) => {
-    response.json(`Supprimera l\'article ${JSON.stringify(articles[request.params.id])}`);
+
+    if(request.params.id > articles.length){
+        response.json("Article inexistant");
+    } else {
+        response.json(`Supprime l\'article ${request.params.id}`);
+        delete articles[request.params.id];
+    }
 })
 
 app.listen(3000, () => {
