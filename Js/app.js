@@ -70,7 +70,8 @@ app.delete('/article/:id', (request, response) => {
     }
 
     // Supprimer grace à  l'index
-    articles.slice(foundArticleIndex, 1);
+    articles.splice(foundArticleIndex, 1);
+    return response.json(`Article supprimé`)
 
 })
 
