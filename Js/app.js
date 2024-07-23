@@ -15,8 +15,11 @@ app.get('/article/:id', (request, response) => {
     response.json(JSON.stringify(articles[request.params.id]));
 })
 
+// parses incoming requests with JSON payloads
+app.use(express.json());
 app.post('/article/save-article', (request, response) => {
     response.json("Va créer/mettre à jour un article envoyé");
+    console.log(request.body);
     articles.push(request.body);
 })
 
