@@ -65,6 +65,10 @@ app.delete('/article/:id', (request, response) => {
     // Trouver l'index
     const foundArticleIndex = articles.findIndex(article => article.id === id);
 
+    if(foundArticleIndex < 0){
+        return response.json(`Impossible de supprimer un article inexistant`)
+    }
+
     // Supprimer grace à  l'index
     articles.slice(foundArticleIndex, 1);
 
